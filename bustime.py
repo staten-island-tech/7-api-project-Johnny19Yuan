@@ -1,3 +1,4 @@
+import tkinter as tk
 import requests
 
 def bus(stop):
@@ -6,11 +7,17 @@ def bus(stop):
     return {
         "route": data["Siri"]["ServiceDelivery"]["StopMonitoringDelivery"][0]["MonitoredStopVisit"][0]["MonitoredVehicleJourney"]["PublishedLineName"],
         "dest" : data["Siri"]["ServiceDelivery"]["StopMonitoringDelivery"][0]["MonitoredStopVisit"][0]["MonitoredVehicleJourney"]["DestinationName"],
-        "exarrtime": data["Siri"]["ServiceDelivery"]["StopMonitoringDelivery"][0]["MonitoredStopVisit"][0]["MonitoredVehicleJourney"]["MonitoredCall"]["ExpectedArrivalTime"],
+        "exatime": data["Siri"]["ServiceDelivery"]["StopMonitoringDelivery"][0]["MonitoredStopVisit"][0]["MonitoredVehicleJourney"]["MonitoredCall"]["ExpectedArrivalTime"],
         "currtime": data["Siri"]["ServiceDelivery"]["ResponseTimestamp"],
         "distance": data["Siri"]["ServiceDelivery"]["StopMonitoringDelivery"][0]["MonitoredStopVisit"][0]["MonitoredVehicleJourney"]["MonitoredCall"]["Extensions"]["Distances"]["PresentableDistance"],
-        "passcap": data["Siri"]["ServiceDelivery"]["StopMonitoringDelivery"][0]["MonitoredStopVisit"][0]["MonitoredVehicleJourney"]["MonitoredCall"]["Extensions"]["Capacities"]["EstimatedPassengerCount"],
+        "estpass": data["Siri"]["ServiceDelivery"]["StopMonitoringDelivery"][0]["MonitoredStopVisit"][0]["MonitoredVehicleJourney"]["MonitoredCall"]["Extensions"]["Capacities"]["EstimatedPassengerCount"],
     }
-  
+
+window = tk.Tk()
+window.title("Is it Here")
+window.geometry("600x400")
+window.resizable(False, False)
+tk.Label
 bustime = bus(201020)
-print(bustime)
+for key, value in bustime.items():
+    print(f"{key.title()}: {value}")
