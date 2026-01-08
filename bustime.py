@@ -18,6 +18,7 @@ window.title("Is it Here")
 window.geometry("600x400")
 window.resizable(False, False)
 tk.Label
+prompt = tk.Label(window, text="Type your message below:")
 bustime = bus(201020)
 for key, value in bustime.items():
     print(f"{key.title()}: {value}")
