@@ -2,10 +2,10 @@ import tkinter as tk
 
 window = tk.Tk()
 window.title("Bustime")
-window.geometry("1024x728")
+window.geometry("1168x728")
 btn = tk.Button(
     window,
-    text="see more",
+    text="SEE MORE",
     width=120,
     height=2,
     font=("Impact", 32),
