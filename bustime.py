@@ -36,7 +36,8 @@ label = tk.Label(
 label.grid(row=1, column=0, pady=10)
 
 def search():
-    bus(entry.get,0)
+    route = entry.get
+    bus(route,0)
 
 
 entry = tk.Entry(window, width=30)
